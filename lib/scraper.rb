@@ -22,12 +22,7 @@ class Scraper
   end
   
   def get_courses
-    doc.css(".post").each { |post|
-      course = Course.new
-      course.title = post.css("h2").text
-      course.title = post.css("em").text
-      course.title = post.css("p").text
-    }
+    self.get_page.css(".post")
   end
   
   def make_courses
