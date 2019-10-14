@@ -32,6 +32,7 @@ class Scraper
       course.title = post.css("em").text
       course.title = post.css("p").text
     }
+    Course.all
   end
   
 end
