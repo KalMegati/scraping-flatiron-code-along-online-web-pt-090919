@@ -29,10 +29,9 @@ class Scraper
     self.get_courses.each { |post|
       course = Course.new
       course.title = post.css("h2").text
-      course.title = post.css("em").text
-      course.title = post.css("p").text
+      course.schedule = post.css("em").text
+      course.description = post.css("p").text
     }
-    Course.all
   end
   
 end
